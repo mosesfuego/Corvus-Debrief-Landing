@@ -119,7 +119,7 @@ const LandingPage = () => {
           </div>
           
           <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 leading-[1.1] mb-8 tracking-tighter">
-            Turn messy production data into{' '}
+            Turn messy production data into clear daily decisions{' '}
             <span className="text-blue-700 font-extrabold">
               clear daily decisions
             </span>

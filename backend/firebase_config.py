@@ -1,19 +1,31 @@
 import firebase_admin
 from firebase_admin import credentials, firestore
 import os
+import json
 from pathlib import Path
 
 # Initialize Firebase Admin SDK
 ROOT_DIR = Path(__file__).parent
-FIREBASE_CREDS_PATH = ROOT_DIR / 'secrets' / 'firebase-admin.json'
 
-# Initialize app only once
+# Try to load from environment variable first (for production)
+# Fall back to local file (for development)
+firebase_creds = os.environ.get('FIREBASE_CREDENTIALS')
+project_id = os.environ.get('FIREBASE_PROJECT_ID', 'corvus-debrief')
+
 if not firebase_admin._apps:
-    cred = credentials.Certificate(str(FIREBASE_CREDS_PATH))
+    if firebase_creds:
+        # Production: Load from environment variable
+        cred_dict = json.loads(firebase_creds)
+        cred = credentials.Certificate(cred_dict)
+    else:
+        # Development: Load from file
+        FIREBASE_CREDS_PATH = ROOT_DIR / 'secrets' / 'firebase-admin.json'
+        cred = credentials.Certificate(str(FIREBASE_CREDS_PATH))
+    
     firebase_app = firebase_admin.initialize_app(cred, {
-        'projectId': 'corvus-debrief',
+        'projectId': project_id,
     })
-    print("Firebase Admin SDK initialized successfully")
+    print(f"Firebase Admin SDK initialized successfully for project: {project_id}")
 
 # Get Firestore client
 db = firestore.client()

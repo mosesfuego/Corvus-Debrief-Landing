@@ -122,9 +122,6 @@ const LandingPage = () => {
             Turn messy production data into{' '}
             <span className="text-blue-600 relative inline-block">
               clear daily decisions
-              <svg className="absolute bottom-0 left-0 w-full" height="12" viewBox="0 0 300 12" fill="none">
-                <path d="M0 8C100 4 200 4 300 8" stroke="#2563EB" strokeWidth="3" strokeLinecap="round" opacity="0.3"/>
-              </svg>
             </span>
           </h1>
           
@@ -169,11 +166,11 @@ const LandingPage = () => {
             The Problem
           </div>
           
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 leading-tight">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-8 leading-tight-plus tracking-tight-plus">
             Manufacturing teams waste hours piecing together what's happening
           </h2>
           
-          <div className="space-y-6 text-lg md:text-xl text-gray-700 leading-relaxed">
+          <div className="space-y-6 text-base md:text-lg text-slate-600 leading-relaxed">
             <p className="border-l-4 border-gray-300 pl-6">
               Production data lives in disconnected systems. Work orders in the MES, quality reports in spreadsheets, inventory in another tool.
             </p>
@@ -194,13 +191,13 @@ const LandingPage = () => {
             The Solution
           </div>
           
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 leading-tight">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-8 leading-tight-plus tracking-tight-plus">
             Corvus gives you a clear view of what needs attention
           </h2>
           
           <div className="grid md:grid-cols-2 gap-12 mt-12">
             <div>
-              <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
+              <div className="space-y-6 text-base md:text-lg text-slate-600 leading-relaxed">
                 <p>
                   Corvus analyzes your production and work order data to identify issues automatically.
                 </p>

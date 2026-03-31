@@ -8,14 +8,28 @@ module.exports = {
   theme: {
   	extend: {
   		fontFamily: {
+  			'sans': ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
   			'heading': ['Inter', 'sans-serif'],
-  			'body': ['IBM Plex Serif', 'Georgia', 'serif'],
-  			'sans': ['Inter', 'sans-serif'],
-  			'serif': ['IBM Plex Serif', 'Georgia', 'serif'],
+  			'body': ['Inter', 'sans-serif'],
   		},
   		fontSize: {
-  			'body': ['18px', '1.6'],
-  			'body-sm': ['16px', '1.6'],
+  			'body': ['16px', '1.6'],
+  			'body-lg': ['18px', '1.6'],
+  		},
+  		letterSpacing: {
+  			'tighter': '-0.03em',
+  			'tight-plus': '-0.025em',
+  		},
+  		lineHeight: {
+  			'tightest': '1.05',
+  			'tight-plus': '1.1',
+  		},
+  		colors: {
+  			'slate': {
+  				'900': '#111827',
+  				'600': '#475569',
+  				'500': '#64748b',
+  			},
   		},
   		borderRadius: {
   			lg: 'var(--radius)',

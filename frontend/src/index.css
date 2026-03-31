@@ -2,40 +2,72 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Professional Typography System */
+/* Premium SaaS Typography System - High-End Tech Aesthetic */
 body {
     margin: 0;
-    font-family: 'IBM Plex Serif', Georgia, serif;
-    font-size: 18px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 16px;
     line-height: 1.6;
+    color: #475569; /* text-slate-600 */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* Headings use Inter */
+/* Headlines - Premium SaaS Look */
 h1, h2, h3, h4, h5, h6,
 .heading-font {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    font-weight: 800;
-    line-height: 1.2;
-    letter-spacing: -0.02em;
+    font-weight: 800; /* Extra Bold */
+    line-height: 1.1; /* Tight leading for punch */
+    letter-spacing: -0.02em; /* Tighter tracking - the "secret sauce" */
+    color: #111827; /* Deep charcoal, not pure black */
 }
 
-/* Body text uses IBM Plex Serif */
+/* Specific headline refinements */
+h1 {
+    line-height: 1.05; /* Even tighter for largest headlines */
+    letter-spacing: -0.03em; /* Tightest for impact */
+}
+
+h2 {
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+}
+
+/* Body text - Refined and professional */
 p, li, span, a,
 .body-font {
-    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-family: 'Inter', sans-serif;
+    color: #475569; /* text-slate-600 - softer than black */
+    font-size: 16px;
+    line-height: 1.6;
 }
 
-/* Buttons and UI elements use Inter */
+/* Larger body text for emphasis areas */
+.text-lg p,
+.lead-text {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Buttons and UI elements */
 button, .btn,
 .ui-font {
     font-family: 'Inter', sans-serif;
     font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+/* Labels and small text */
+label, .label-text {
+    font-size: 14px;
+    font-weight: 500;
+    color: #64748b; /* text-slate-500 */
 }
 
 code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 14px;
 }
 
 @layer base {

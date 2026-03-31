@@ -118,9 +118,9 @@ const LandingPage = () => {
             ✨ Early Access
           </div>
           
-          <h1 className="text-6xl md:text-7xl font-bold text-gray-900 leading-[1.1] mb-8 tracking-tight">
+          <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 leading-[1.1] mb-8 tracking-tighter">
             Turn messy production data into{' '}
-            <span className="text-blue-900 relative inline-block">
+            <span className="text-blue-700 font-extrabold">
               clear daily decisions
             </span>
           </h1>

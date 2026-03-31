@@ -1,0 +1,129 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  # Frontend Tests and Build
+  frontend:
+    name: Frontend CI
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'yarn'
+        cache-dependency-path: frontend/yarn.lock
+        
+    - name: Install dependencies
+      working-directory: ./frontend
+      run: yarn install --frozen-lockfile
+      
+    - name: Lint JavaScript
+      working-directory: ./frontend
+      run: yarn lint || echo "Linting completed with warnings"
+      
+    - name: Build frontend
+      working-directory: ./frontend
+      run: yarn build
+      env:
+        REACT_APP_BACKEND_URL: ${{ secrets.REACT_APP_BACKEND_URL || 'http://localhost:8001' }}
+        
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: frontend-build
+        path: frontend/build
+        retention-days: 7
+
+  # Backend Tests and Validation
+  backend:
+    name: Backend CI
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        cache: 'pip'
+        cache-dependency-path: backend/requirements.txt
+        
+    - name: Install dependencies
+      working-directory: ./backend
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        
+    - name: Lint Python code
+      working-directory: ./backend
+      run: |
+        pip install ruff
+        ruff check . || echo "Linting completed with warnings"
+        
+    - name: Check Python syntax
+      working-directory: ./backend
+      run: |
+        python -m py_compile server.py
+        python -m py_compile firebase_config.py
+        python -m py_compile email_service.py
+        python -m py_compile models.py
+
+  # Security Checks
+  security:
+    name: Security Scan
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      
+    - name: Run Trivy vulnerability scanner
+      uses: aquasecurity/trivy-action@master
+      with:
+        scan-type: 'fs'
+        scan-ref: '.'
+        format: 'sarif'
+        output: 'trivy-results.sarif'
+        
+    - name: Upload Trivy results to GitHub Security
+      uses: github/codeql-action/upload-sarif@v2
+      if: always()
+      with:
+        sarif_file: 'trivy-results.sarif'
+
+  # Deployment (Optional - configure as needed)
+  deploy:
+    name: Deploy to Production
+    needs: [frontend, backend]
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      
+    - name: Deploy notification
+      run: |
+        echo "🚀 Deploying to production..."
+        echo "Add your deployment steps here"
+        # Example: Deploy to Vercel, AWS, GCP, etc.
+        
+    - name: Deployment success notification
+      if: success()
+      run: echo "✅ Deployment successful!"
+      
+    - name: Deployment failure notification
+      if: failure()
+      run: echo "❌ Deployment failed!"

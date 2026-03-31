@@ -7,6 +7,16 @@ module.exports = {
   ],
   theme: {
   	extend: {
+  		fontFamily: {
+  			'heading': ['Inter', 'sans-serif'],
+  			'body': ['IBM Plex Serif', 'Georgia', 'serif'],
+  			'sans': ['Inter', 'sans-serif'],
+  			'serif': ['IBM Plex Serif', 'Georgia', 'serif'],
+  		},
+  		fontSize: {
+  			'body': ['18px', '1.6'],
+  			'body-sm': ['16px', '1.6'],
+  		},
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',

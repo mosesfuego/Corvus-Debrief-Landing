@@ -120,7 +120,7 @@ const LandingPage = () => {
           
           <h1 className="text-6xl md:text-7xl font-bold text-gray-900 leading-[1.1] mb-8 tracking-tight">
             Turn messy production data into{' '}
-            <span className="text-blue-600 relative inline-block">
+            <span className="text-blue-900 relative inline-block">
               clear daily decisions
             </span>
           </h1>

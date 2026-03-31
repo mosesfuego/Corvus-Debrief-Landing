@@ -7,20 +7,34 @@ from pathlib import Path
 # Initialize Firebase Admin SDK
 ROOT_DIR = Path(__file__).parent
 
-# Try to load from environment variable first (for production)
-# Fall back to local file (for development)
+# Get Firebase configuration from environment
 firebase_creds = os.environ.get('FIREBASE_CREDENTIALS')
-project_id = os.environ.get('FIREBASE_PROJECT_ID', 'corvus-debrief')
+project_id = os.environ.get('FIREBASE_PROJECT_ID')
 
 if not firebase_admin._apps:
-    if firebase_creds:
-        # Production: Load from environment variable
+    # Production: Load from environment variable
+    if firebase_creds and project_id:
         cred_dict = json.loads(firebase_creds)
         cred = credentials.Certificate(cred_dict)
+        print(f"✅ Loading Firebase from environment variables (Production mode)")
+    # Development: Load from file
     else:
-        # Development: Load from file
         FIREBASE_CREDS_PATH = ROOT_DIR / 'secrets' / 'firebase-admin.json'
+        if not FIREBASE_CREDS_PATH.exists():
+            raise FileNotFoundError(
+                f"Firebase credentials not found. Please either:\n"
+                f"1. Set FIREBASE_CREDENTIALS and FIREBASE_PROJECT_ID environment variables (Production)\n"
+                f"2. Place firebase-admin.json in {FIREBASE_CREDS_PATH} (Development)"
+            )
         cred = credentials.Certificate(str(FIREBASE_CREDS_PATH))
+        # Read project ID from credentials file in development
+        with open(FIREBASE_CREDS_PATH) as f:
+            cred_data = json.load(f)
+            project_id = cred_data.get('project_id')
+        print(f"✅ Loading Firebase from file (Development mode)")
+    
+    if not project_id:
+        raise ValueError("Firebase project ID not found in credentials or environment")
     
     firebase_app = firebase_admin.initialize_app(cred, {
         'projectId': project_id,

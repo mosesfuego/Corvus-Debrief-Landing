@@ -166,11 +166,11 @@ const LandingPage = () => {
             The Problem
           </div>
           
-          <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-8 leading-tight-plus tracking-tight-plus">
+          <h2 className="text-3xl md:text-4xl font-black text-slate-950 mb-6 leading-super-tight tracking-super-tight max-w-3xl">
             Manufacturing teams waste hours piecing together what's happening
           </h2>
           
-          <div className="space-y-6 text-base md:text-lg text-slate-600 leading-relaxed">
+          <div className="space-y-4 text-sm md:text-base text-slate-500 leading-relaxed max-w-2xl">
             <p className="border-l-4 border-gray-300 pl-6">
               Production data lives in disconnected systems. Work orders in the MES, quality reports in spreadsheets, inventory in another tool.
             </p>
@@ -191,13 +191,13 @@ const LandingPage = () => {
             The Solution
           </div>
           
-          <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-8 leading-tight-plus tracking-tight-plus">
+          <h2 className="text-3xl md:text-4xl font-black text-slate-950 mb-6 leading-super-tight tracking-super-tight max-w-3xl">
             Corvus gives you a clear view of what needs attention
           </h2>
           
           <div className="grid md:grid-cols-2 gap-12 mt-12">
             <div>
-              <div className="space-y-6 text-base md:text-lg text-slate-600 leading-relaxed">
+              <div className="space-y-4 text-sm md:text-base text-slate-500 leading-relaxed">
                 <p>
                   Corvus analyzes your production and work order data to identify issues automatically.
                 </p>

@@ -13,16 +13,22 @@ module.exports = {
   			'body': ['Inter', 'sans-serif'],
   		},
   		fontSize: {
-  			'body': ['16px', '1.6'],
-  			'body-lg': ['18px', '1.6'],
+  			'body': ['15px', '1.5'],
+  			'body-lg': ['17px', '1.5'],
+  			'xs': ['13px', '1.4'],
   		},
   		letterSpacing: {
+  			'tightest': '-0.05em',
+  			'super-tight': '-0.04em',
   			'tighter': '-0.03em',
-  			'tight-plus': '-0.025em',
   		},
   		lineHeight: {
-  			'tightest': '1.05',
+  			'ultra-tight': '1.0',
+  			'super-tight': '1.05',
   			'tight-plus': '1.1',
+  		},
+  		fontWeight: {
+  			'black': '900',
   		},
   		colors: {
   			'slate': {

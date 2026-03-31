@@ -36,7 +36,8 @@ async def save_demo_request(data: dict) -> dict:
         return {
             'id': doc_ref.id,
             'success': True,
-            'message': 'Demo request saved successfully'
+            'message': 'Demo request saved successfully',
+            'data': data
         }
     except Exception as e:
         print(f"Error saving demo request: {str(e)}")
@@ -50,8 +51,40 @@ async def get_demo_requests():
         for doc in docs:
             data = doc.to_dict()
             data['id'] = doc.id
+            # Convert timestamp to string for JSON serialization
+            if 'timestamp' in data:
+                data['timestamp'] = data['timestamp'].isoformat() if hasattr(data['timestamp'], 'isoformat') else str(data['timestamp'])
             requests.append(data)
         return requests
     except Exception as e:
         print(f"Error fetching demo requests: {str(e)}")
         raise Exception(f"Failed to fetch demo requests: {str(e)}")
+
+async def update_demo_request_status(request_id: str, new_status: str) -> dict:
+    """Update the status of a demo request"""
+    try:
+        doc_ref = db.collection('demo_requests').document(request_id)
+        doc_ref.update({
+            'status': new_status,
+            'updated_at': firestore.SERVER_TIMESTAMP
+        })
+        return {
+            'success': True,
+            'message': f'Status updated to {new_status}'
+        }
+    except Exception as e:
+        print(f"Error updating demo request: {str(e)}")
+        raise Exception(f"Failed to update demo request: {str(e)}")
+
+async def delete_demo_request(request_id: str) -> dict:
+    """Delete a demo request"""
+    try:
+        doc_ref = db.collection('demo_requests').document(request_id)
+        doc_ref.delete()
+        return {
+            'success': True,
+            'message': 'Demo request deleted successfully'
+        }
+    except Exception as e:
+        print(f"Error deleting demo request: {str(e)}")
+        raise Exception(f"Failed to delete demo request: {str(e)}")

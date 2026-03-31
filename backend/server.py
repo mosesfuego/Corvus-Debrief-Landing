@@ -5,7 +5,8 @@ import os
 import logging
 from pathlib import Path
 from models import DemoRequest, DemoRequestResponse
-from firebase_config import save_demo_request, get_demo_requests, db
+from firebase_config import save_demo_request, get_demo_requests, update_demo_request_status, delete_demo_request, db
+from email_service import send_demo_request_notification
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
@@ -26,6 +27,12 @@ async def create_demo_request(request: DemoRequest):
     """Submit a demo request"""
     try:
         result = await save_demo_request(request.dict())
+        
+        # Send email notification (non-blocking)
+        if result.get('success'):
+            email_result = await send_demo_request_notification(result.get('data'))
+            logger.info(f"Email notification sent: {email_result.get('status')}")
+        
         return result
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
@@ -36,6 +43,24 @@ async def list_demo_requests():
     try:
         requests = await get_demo_requests()
         return {"success": True, "data": requests, "count": len(requests)}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@api_router.patch("/demo-requests/{request_id}/status")
+async def update_request_status(request_id: str, status: str):
+    """Update demo request status (admin endpoint)"""
+    try:
+        result = await update_demo_request_status(request_id, status)
+        return result
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@api_router.delete("/demo-requests/{request_id}")
+async def delete_request(request_id: str):
+    """Delete a demo request (admin endpoint)"""
+    try:
+        result = await delete_demo_request(request_id)
+        return result
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
@@ -58,6 +83,9 @@ async def health_check():
             "status": "unhealthy",
             "error": str(e)
         }
+
+# Include the router in the main app
+app.include_router(api_router)
 
 # Include the router in the main app
 app.include_router(api_router)

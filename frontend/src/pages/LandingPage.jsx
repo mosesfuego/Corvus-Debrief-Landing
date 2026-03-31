@@ -66,10 +66,17 @@ const LandingPage = () => {
       <nav className={`fixed top-0 w-full bg-white z-50 transition-all duration-300 ${
         isScrolled ? 'border-b border-gray-200 shadow-sm' : 'border-b border-transparent'
       }`}>
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-5">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
-            <div className="text-2xl font-bold tracking-tight text-gray-900">
-              Corvus<span className="text-blue-600">.</span>
+            <div className="flex items-center gap-3">
+              <img 
+                src="/images/corvus-logo.png" 
+                alt="Corvus Logo" 
+                className="h-10 w-10 object-contain"
+              />
+              <div className="text-2xl font-bold tracking-tight text-gray-900">
+                Corvus<span className="text-blue-600">.</span>
+              </div>
             </div>
             <div className="hidden md:flex items-center gap-10">
               <button
@@ -182,7 +189,7 @@ const LandingPage = () => {
 
       {/* Solution Section */}
       <section className="py-32 px-6">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="inline-block mb-6 px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold uppercase tracking-wide">
             The Solution
           </div>
@@ -206,23 +213,32 @@ const LandingPage = () => {
               </div>
             </div>
             
-            <div className="bg-gradient-to-br from-blue-50 to-white border border-blue-200 rounded-2xl p-8">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Key Benefits</h3>
-              <ul className="space-y-4">
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="h-6 w-6 text-blue-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Automatically identify blockers and risks</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="h-6 w-6 text-blue-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Daily reports delivered to your team</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="h-6 w-6 text-blue-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">Start standups with clear priorities</span>
-                </li>
-              </ul>
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-blue-50 rounded-2xl transform rotate-3"></div>
+              <img 
+                src="/images/team-meeting.png" 
+                alt="Manufacturing team collaboration" 
+                className="relative rounded-2xl shadow-2xl border-4 border-white object-cover w-full h-full"
+              />
             </div>
+          </div>
+
+          <div className="mt-12 bg-gradient-to-br from-blue-50 to-white border border-blue-200 rounded-2xl p-8">
+            <h3 className="text-xl font-bold text-gray-900 mb-4">Key Benefits</h3>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3">
+                <CheckCircle className="h-6 w-6 text-blue-600 flex-shrink-0 mt-0.5" />
+                <span className="text-gray-700">Automatically identify blockers and risks</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <CheckCircle className="h-6 w-6 text-blue-600 flex-shrink-0 mt-0.5" />
+                <span className="text-gray-700">Daily reports delivered to your team</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <CheckCircle className="h-6 w-6 text-blue-600 flex-shrink-0 mt-0.5" />
+                <span className="text-gray-700">Start standups with clear priorities</span>
+              </li>
+            </ul>
           </div>
         </div>
       </section>
@@ -395,8 +411,15 @@ const LandingPage = () => {
       <footer className="border-t border-gray-200 py-12 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
-            <div className="text-2xl font-bold tracking-tight text-gray-900">
-              Corvus<span className="text-blue-600">.</span>
+            <div className="flex items-center gap-3">
+              <img 
+                src="/images/corvus-logo.png" 
+                alt="Corvus Logo" 
+                className="h-8 w-8 object-contain"
+              />
+              <div className="text-2xl font-bold tracking-tight text-gray-900">
+                Corvus<span className="text-blue-600">.</span>
+              </div>
             </div>
             <div className="flex gap-10 text-gray-600">
               <button 

@@ -69,7 +69,7 @@ const DemoModal = ({ isOpen, onClose, type = 'demo' }) => {
           </DialogTitle>
           <DialogDescription className="text-gray-600">
             {type === 'demo' 
-              ? 'See how Corvus can help your manufacturing team make better decisions.'
+              ? 'See how Corvus Debrief can help your manufacturing team make better decisions.'
               : 'Get a sample report with your production data.'}
           </DialogDescription>
         </DialogHeader>

@@ -41,7 +41,7 @@ const LandingPage = () => {
       case 'warning':
         return 'border-l-amber-500 bg-amber-50';
       case 'action':
-        return 'border-l-blue-500 bg-blue-50';
+        return 'border-l-green-500 bg-green-50';
       default:
         return 'border-l-gray-300 bg-gray-50';
     }
@@ -54,7 +54,7 @@ const LandingPage = () => {
       case 'warning':
         return <Clock className="h-5 w-5 text-amber-600" />;
       case 'action':
-        return <CheckCircle className="h-5 w-5 text-blue-600" />;
+        return <CheckCircle className="h-5 w-5 text-green-600" />;
       default:
         return null;
     }
@@ -71,11 +71,11 @@ const LandingPage = () => {
             <div className="flex items-center gap-3">
               <img 
                 src="/images/corvus-logo.png" 
-                alt="Corvus Logo" 
+                alt="Corvus Debrief Logo" 
                 className="h-10 w-10 object-contain"
               />
               <div className="text-2xl font-bold tracking-tight text-gray-900">
-                Corvus<span className="text-blue-600">.</span>
+                Corvus Debrief<span className="text-blue-600">.</span>
               </div>
             </div>
             <div className="hidden md:flex items-center gap-10">
@@ -119,8 +119,8 @@ const LandingPage = () => {
           </div>
           
           <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 leading-[1.1] mb-8 tracking-tighter">
-            Turn messy production data into clear daily decisions{' '}
-            <span className="text-blue-700 font-extrabold">
+            Turn messy production data into {' '}
+            <span className="text-5xl md:text-5xl font-extrabold">
               clear daily decisions
             </span>
           </h1>
@@ -162,23 +162,26 @@ const LandingPage = () => {
       {/* Problem Section */}
       <section id="product" className="py-32 px-6 bg-gray-50">
         <div className="max-w-5xl mx-auto">
-          <div className="inline-block mb-6 px-4 py-2 bg-gray-200 text-gray-700 rounded-full text-sm font-semibold uppercase tracking-wide">
+          <div className="inline-block mb-6 px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold uppercase tracking-wide">
             The Problem
           </div>
           
           <h2 className="text-3xl md:text-4xl font-black text-slate-950 mb-6 leading-super-tight tracking-super-tight max-w-3xl">
-            Manufacturing teams waste hours piecing together what's happening
+            Manufacturing teams waste hours figuring out what’s actually happening.
           </h2>
           
           <div className="space-y-4 text-sm md:text-base text-slate-500 leading-relaxed max-w-2xl">
-            <p className="border-l-4 border-gray-300 pl-6">
-              Production data lives in disconnected systems. Work orders in the MES, quality reports in spreadsheets, inventory in another tool.
+            <p className="border-l-4 border-gray-600 pl-6">
+              Production data is scattered teams spend hours each day figuring out:
             </p>
-            <p className="border-l-4 border-gray-300 pl-6">
-              Every morning, operations teams manually dig through CSVs and dashboards to figure out what's blocked, what's at risk, and what needs a decision.
+            <p className="border-l-4 border-red-300 pl-6">
+              What’s blocked
             </p>
-            <p className="border-l-4 border-blue-600 pl-6 font-medium">
-              By the time they have clarity, the standup is over and the day has started.
+            <p className="border-l-4 border-orange-300 pl-6">
+              What’s slipping
+            </p>
+            <p className="border-l-4 border-green-300 pl-6">
+              What needs action
             </p>
           </div>
         </div>
@@ -192,14 +195,23 @@ const LandingPage = () => {
           </div>
           
           <h2 className="text-3xl md:text-4xl font-black text-slate-950 mb-6 leading-super-tight tracking-super-tight max-w-3xl">
-            Corvus gives you a clear view of what needs attention
+            Corvus Debrief transforms production data into decision-ready insights.
           </h2>
           
           <div className="grid md:grid-cols-2 gap-12 mt-12">
             <div>
               <div className="space-y-4 text-sm md:text-base text-slate-500 leading-relaxed">
                 <p>
-                  Corvus analyzes your production and work order data to identify issues automatically.
+                  By analyzing work orders and operational signals, it surfaces:
+                </p>
+                <p className="border-l-4 border-red-300 pl-6">
+                  What’s blocked
+                </p>
+                <p className="border-l-4 border-orange-300 pl-6">
+                  What’s slipping
+                </p>
+                <p className="border-l-4 border-green-300 pl-6">
+                  What needs a decision
                 </p>
                 <p>
                   Instead of hunting through spreadsheets, you get a simple daily report that shows what's blocked, what's at risk, and what needs a decision.
@@ -411,11 +423,11 @@ const LandingPage = () => {
             <div className="flex items-center gap-3">
               <img 
                 src="/images/corvus-logo.png" 
-                alt="Corvus Logo" 
+                alt="Corvus Debrief Logo" 
                 className="h-8 w-8 object-contain"
               />
               <div className="text-2xl font-bold tracking-tight text-gray-900">
-                Corvus<span className="text-blue-600">.</span>
+                Corvus Debrief<span className="text-blue-600">.</span>
               </div>
             </div>
             <div className="flex gap-10 text-gray-600">

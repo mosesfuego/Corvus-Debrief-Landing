@@ -4,7 +4,7 @@ export const sampleReport = {
   reportDate: "May 15, 2025",
   sections: [
     {
-      title: "Blocked Builds",
+      title: "Blocked",
       status: "critical",
       items: [
         {

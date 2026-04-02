@@ -120,13 +120,13 @@ const LandingPage = () => {
           
           <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 leading-[1.1] mb-8 tracking-tighter">
             Turn messy production data into {' '}
-            <span className="text-5xl md:text-5xl font-extrabold">
+            <span className="text-5xl md:text-7xl font-extrabold mb-8 tracking-tighter ">
               clear daily decisions
             </span>
           </h1>
           
           <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl leading-relaxed font-light">
-            Corvus helps manufacturing teams see what's blocked, at risk, and what needs action—without digging through spreadsheets.
+            Corvus helps manufacturing teams see what's blocked, at risk, and what needs action without digging through multiple systems.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4">
@@ -148,11 +148,11 @@ const LandingPage = () => {
 
           <div className="mt-16 flex items-center gap-8 text-sm text-gray-500">
             <div className="flex items-center gap-2">
-              <CheckCircle className="h-4 w-4 text-blue-600" />
+              <CheckCircle className="h-4 w-4 text-green-600" />
               <span>No credit card required</span>
             </div>
             <div className="flex items-center gap-2">
-              <CheckCircle className="h-4 w-4 text-blue-600" />
+              <CheckCircle className="h-4 w-4 text-green-600" />
               <span>Setup in minutes</span>
             </div>
           </div>
@@ -171,7 +171,7 @@ const LandingPage = () => {
           </h2>
           
           <div className="space-y-4 text-sm md:text-base text-slate-500 leading-relaxed max-w-2xl">
-            <p className="border-l-4 border-gray-600 pl-6">
+            <p>
               Production data is scattered teams spend hours each day figuring out:
             </p>
             <p className="border-l-4 border-red-300 pl-6">
@@ -193,8 +193,9 @@ const LandingPage = () => {
           <div className="inline-block mb-6 px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold uppercase tracking-wide">
             The Solution
           </div>
+  
           
-          <h2 className="text-3xl md:text-4xl font-black text-slate-950 mb-6 leading-super-tight tracking-super-tight max-w-3xl">
+          <h2 className="text-3xl md:text-4xl font-black text-slate-950 mt-6 leading-tight tracking-normal font-serif max-w-4xl">
             Corvus Debrief transforms production data into decision-ready insights.
           </h2>
           
@@ -214,7 +215,7 @@ const LandingPage = () => {
                   What needs a decision
                 </p>
                 <p>
-                  Instead of hunting through spreadsheets, you get a simple daily report that shows what's blocked, what's at risk, and what needs a decision.
+                  Instead of hunting through ERP, MES,QMS and spreadsheets, you get simple reports that show teams all they need to know to make important decisons.
                 </p>
                 <p className="font-medium text-gray-900">
                   Your team starts the day with shared context and can focus on solving problems instead of finding them.
@@ -236,15 +237,15 @@ const LandingPage = () => {
             <h3 className="text-xl font-bold text-gray-900 mb-4">Key Benefits</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <CheckCircle className="h-6 w-6 text-blue-600 flex-shrink-0 mt-0.5" />
+                <CheckCircle className="h-6 w-6 text-green-600 flex-shrink-0 mt-0.5" />
                 <span className="text-gray-700">Automatically identify blockers and risks</span>
               </li>
               <li className="flex items-start gap-3">
-                <CheckCircle className="h-6 w-6 text-blue-600 flex-shrink-0 mt-0.5" />
+                <CheckCircle className="h-6 w-6 text-green-600 flex-shrink-0 mt-0.5" />
                 <span className="text-gray-700">Daily reports delivered to your team</span>
               </li>
               <li className="flex items-start gap-3">
-                <CheckCircle className="h-6 w-6 text-blue-600 flex-shrink-0 mt-0.5" />
+                <CheckCircle className="h-6 w-6 text-green-600 flex-shrink-0 mt-0.5" />
                 <span className="text-gray-700">Start standups with clear priorities</span>
               </li>
             </ul>
@@ -256,7 +257,7 @@ const LandingPage = () => {
       <section id="how-it-works" className="py-32 px-6 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <div className="inline-block mb-6 px-4 py-2 bg-gray-200 text-gray-700 rounded-full text-sm font-semibold uppercase tracking-wide">
+            <div className="inline-block mb-6 px-4 py-2 bg-blue-200 text-blue-700 rounded-full text-sm font-semibold uppercase tracking-wide">
               How it Works
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
@@ -300,7 +301,7 @@ const LandingPage = () => {
               Sample Output
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              What you get every morning
+              What you get before standup meetings
             </h2>
             <p className="text-xl text-gray-600">
               Daily report for {sampleReport.reportDate}
@@ -369,7 +370,7 @@ const LandingPage = () => {
       <section className="py-32 px-6 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <div className="inline-block mb-6 px-4 py-2 bg-gray-200 text-gray-700 rounded-full text-sm font-semibold uppercase tracking-wide">
+            <div className="inline-block mb-6 px-4 py-2 bg-blue-200 text-blue-700 rounded-full text-sm font-semibold uppercase tracking-wide">
               Benefits
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">

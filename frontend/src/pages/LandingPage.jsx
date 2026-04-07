@@ -75,7 +75,7 @@ const LandingPage = () => {
                 className="h-10 w-10 object-contain"
               />
               <div className="text-2xl font-bold tracking-tight text-gray-900">
-                Corvus Debrief<span className="text-blue-600">.</span>
+                Corvus MFG<span className="text-blue-600">.</span>
               </div>
             </div>
             <div className="hidden md:flex items-center gap-10">
@@ -111,16 +111,16 @@ const LandingPage = () => {
       {/* Hero Section */}
       <section className="pt-40 pb-32 px-6 relative overflow-hidden">
         {/* Subtle background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-white opacity-70"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-70 via-white to-white opacity-70"></div>
         
-        <div className="max-w-5xl mx-auto relative z-10">
+        <div className="bg-gradient-to-br from-blue-60 to-blue-400 max-w-5xl mx-auto relative z-10">
           <div className="inline-block mb-6 px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
             ✨ Early Access
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 leading-[1.1] mb-8 tracking-tighter">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 leading-[1.1] mb-8 tracking-tighter">
             Turn messy production data into {' '}
-            <span className="text-5xl md:text-7xl font-extrabold mb-8 tracking-tighter ">
+            <span className="text-4xl md:text-5xl font-extrabold mb-8 tracking-tighter ">
               clear daily decisions
             </span>
           </h1>
@@ -140,7 +140,7 @@ const LandingPage = () => {
             <Button
               onClick={() => openModal('report')}
               variant="outline"
-              className="px-8 py-7 text-lg border-2 border-gray-300 hover:border-gray-400 hover:bg-gray-50 transition-all duration-200"
+              className="px-8 py-7 text-lg border-2 border-gray-300 hover:border-blue-600 hover:bg-gray-50 transition-all duration-200"
             >
               See Sample Report
             </Button>
@@ -166,30 +166,31 @@ const LandingPage = () => {
             The Problem
           </div>
           
-          <h2 className="text-3xl md:text-4xl font-black text-slate-950 mb-6 leading-super-tight tracking-super-tight max-w-3xl">
+          <h2 className="text-3xl md:text-4xl font-black text-slate-950 mt-6 leading-tight tracking-normal font-serif max-w-4xl">
             Manufacturing teams waste hours figuring out what’s actually happening.
           </h2>
-          
+          <div className="grid md:grid-cols-2 gap-5 mt-12"></div>
           <div className="space-y-4 text-sm md:text-base text-slate-500 leading-relaxed max-w-2xl">
             <p>
               Production data is scattered teams spend hours each day figuring out:
             </p>
-            <p className="border-l-4 border-red-300 pl-6">
+            <p className="border-l-4 border-red-500 pl-6">
               What’s blocked
             </p>
             <p className="border-l-4 border-orange-300 pl-6">
               What’s slipping
             </p>
-            <p className="border-l-4 border-green-300 pl-6">
+            <p className="border-l-4 border-green-500 pl-6">
               What needs action
             </p>
           </div>
         </div>
+        
       </section>
 
       {/* Solution Section */}
       <section className="py-32 px-6">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <div className="inline-block mb-6 px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold uppercase tracking-wide">
             The Solution
           </div>
@@ -199,27 +200,25 @@ const LandingPage = () => {
             Corvus Debrief transforms production data into decision-ready insights.
           </h2>
           
-          <div className="grid md:grid-cols-2 gap-12 mt-12">
+          <div className="grid md:grid-cols-2 gap-9 mt-9">
             <div>
               <div className="space-y-4 text-sm md:text-base text-slate-500 leading-relaxed">
                 <p>
                   By analyzing work orders and operational signals, it surfaces:
                 </p>
-                <p className="border-l-4 border-red-300 pl-6">
+                <p className="border-l-4 border-red-500 pl-6">
                   What’s blocked
                 </p>
                 <p className="border-l-4 border-orange-300 pl-6">
                   What’s slipping
                 </p>
-                <p className="border-l-4 border-green-300 pl-6">
+                <p className="border-l-4 border-green-500 pl-6">
                   What needs a decision
                 </p>
                 <p>
                   Instead of hunting through ERP, MES,QMS and spreadsheets, you get simple reports that show teams all they need to know to make important decisons.
                 </p>
-                <p className="font-medium text-gray-900">
-                  Your team starts the day with shared context and can focus on solving problems instead of finding them.
-                </p>
+          
               </div>
             </div>
             
@@ -260,7 +259,7 @@ const LandingPage = () => {
             <div className="inline-block mb-6 px-4 py-2 bg-blue-200 text-blue-700 rounded-full text-sm font-semibold uppercase tracking-wide">
               How it Works
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+            <h2 className="text-3xl md:text-4xl font-black text-slate-950 mt-6 leading-tight tracking-normal font-serif max-w-4xl">
               Simple, powerful workflow
             </h2>
           </div>
@@ -300,12 +299,11 @@ const LandingPage = () => {
             <div className="inline-block mb-6 px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold uppercase tracking-wide">
               Sample Output
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            
+            <h2 className="text-3xl md:text-4xl font-black text-slate-950 mt-6 leading-tight tracking-normal font-serif max-w-4xl">
               What you get before standup meetings
             </h2>
-            <p className="text-xl text-gray-600">
-              Daily report for {sampleReport.reportDate}
-            </p>
+            
           </div>
 
           <div className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-2xl p-8 md:p-12 shadow-xl">
@@ -373,7 +371,7 @@ const LandingPage = () => {
             <div className="inline-block mb-6 px-4 py-2 bg-blue-200 text-blue-700 rounded-full text-sm font-semibold uppercase tracking-wide">
               Benefits
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+            <h2 className="text-3xl md:text-4xl font-black text-slate-950 mt-6 leading-tight tracking-normal font-serif max-w-4xl">
               Why teams use Corvus
             </h2>
           </div>
@@ -399,8 +397,8 @@ const LandingPage = () => {
       {/* Final CTA Section */}
       <section id="contact" className="py-32 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-3xl p-12 md:p-16 text-white shadow-2xl">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <div className="bg-gradient-to-br from-blue-50 to-blue-200 rounded-3xl p-12 md:p-16 text-white shadow-2xl">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 font-serif">
               Try it with your data
             </h2>
             <p className="text-xl md:text-2xl mb-10 opacity-90 font-light">

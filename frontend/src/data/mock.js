@@ -63,7 +63,7 @@ export const howItWorksSteps = [
   {
     step: 1,
     title: "Upload your data",
-    description: "CSV file or MES export from your production system"
+    description: "CSV/MES export from your production system"
   },
   {
     step: 2,

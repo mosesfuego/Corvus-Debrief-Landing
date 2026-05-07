@@ -3,7 +3,7 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } f
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
-import { X, Loader2, CheckCircle2 } from 'lucide-react';
+import { Loader2, CheckCircle2 } from 'lucide-react';
 import axios from 'axios';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
@@ -65,12 +65,12 @@ const DemoModal = ({ isOpen, onClose, type = 'demo' }) => {
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold">
-            {type === 'demo' ? 'Request a Demo' : 'Get Sample Report'}
+            {type === 'demo' ? 'See the 5-minute debrief' : 'Try a messy CSV'}
           </DialogTitle>
           <DialogDescription className="text-gray-600">
             {type === 'demo' 
-              ? 'See how Corvus Debrief can help your manufacturing team make better decisions.'
-              : 'Get a sample report with your production data.'}
+              ? 'Walk through how Corvus turns a raw manufacturing export into a team-specific ops debrief.'
+              : 'Bring a messy export and see what Corvus can recover, normalize, and turn into decisions.'}
           </DialogDescription>
         </DialogHeader>
 
@@ -79,8 +79,8 @@ const DemoModal = ({ isOpen, onClose, type = 'demo' }) => {
             <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <CheckCircle2 className="w-8 h-8 text-green-600" />
             </div>
-            <p className="text-lg font-semibold text-gray-900">Thank you!</p>
-            <p className="text-gray-600 mt-2">We'll be in touch soon.</p>
+            <p className="text-lg font-semibold text-gray-900">Request received.</p>
+            <p className="text-gray-600 mt-2">We will follow up with a short demo path.</p>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-5 mt-4">
@@ -138,7 +138,7 @@ const DemoModal = ({ isOpen, onClose, type = 'demo' }) => {
             <div className="flex gap-3 pt-4">
               <Button 
                 type="submit" 
-                className="flex-1 bg-blue-600 hover:bg-blue-700 text-white transition-colors duration-200"
+                className="flex-1 bg-orange-700 text-white transition-colors duration-200 hover:bg-orange-800"
                 disabled={loading}
               >
                 {loading ? (
@@ -147,7 +147,7 @@ const DemoModal = ({ isOpen, onClose, type = 'demo' }) => {
                     Submitting...
                   </>
                 ) : (
-                  'Submit'
+                  type === 'demo' ? 'Request debrief walkthrough' : 'Send CSV demo request'
                 )}
               </Button>
               <Button 

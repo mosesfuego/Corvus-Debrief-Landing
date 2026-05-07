@@ -2,50 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Premium SaaS Typography - Compact & Bold */
 body {
     margin: 0;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     font-size: 15px;
     line-height: 1.5;
-    color: #64748b; /* text-slate-500 - even softer */
+    color: #57534e;
+    background: #f4efe4;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* Headlines - Smaller, Bolder, Punchier */
 h1, h2, h3, h4, h5, h6,
 .heading-font {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    font-weight: 900; /* Black weight for maximum boldness */
-    line-height: 1.05; /* Super tight */
-    letter-spacing: -0.04em; /* Even tighter tracking */
-    color: #0f172a; /* text-slate-950 - deeper */
+    font-family: 'Space Grotesk', 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    color: #17130f;
 }
 
 h1 {
-    line-height: 1.0; /* Tightest possible */
-    letter-spacing: -0.05em; /* Maximum tightness */
-    font-weight: 900;
+    line-height: 1.0;
+    letter-spacing: -0.06em;
+    font-weight: 700;
 }
 
 h2 {
     line-height: 1.05;
     letter-spacing: -0.04em;
-    font-weight: 900;
+    font-weight: 700;
 }
 
 h3 {
     line-height: 1.1;
     letter-spacing: -0.03em;
-    font-weight: 800;
+    font-weight: 700;
 }
 
-/* Body text - Smaller, cleaner */
 p, li, span, a,
 .body-font {
-    font-family: 'Inter', sans-serif;
-    color: #64748b; /* text-slate-500 */
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: inherit;
     font-size: 15px;
     line-height: 1.5;
     font-weight: 400;
@@ -61,7 +59,7 @@ p, li, span, a,
 /* Buttons - Bold and compact */
 button, .btn,
 .ui-font {
-    font-family: 'Inter', sans-serif;
+    font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 700;
     letter-spacing: -0.02em;
     font-size: 15px;
@@ -81,7 +79,7 @@ label, .label-text {
 }
 
 code {
-    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-family: 'IBM Plex Mono', 'Courier New', monospace;
     font-size: 13px;
 }
 

@@ -65,12 +65,10 @@ const DemoModal = ({ isOpen, onClose, type = 'demo' }) => {
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold">
-            {type === 'demo' ? 'See the 5-minute debrief' : 'Try a messy CSV'}
+            Book a 5-minute debrief
           </DialogTitle>
           <DialogDescription className="text-gray-600">
-            {type === 'demo' 
-              ? 'Walk through how Corvus turns a raw manufacturing export into a team-specific ops debrief.'
-              : 'Bring a messy export and see what Corvus can recover, normalize, and turn into decisions.'}
+            Walk through how Corvus turns a raw manufacturing export into a team-specific ops debrief.
           </DialogDescription>
         </DialogHeader>
 
@@ -138,7 +136,7 @@ const DemoModal = ({ isOpen, onClose, type = 'demo' }) => {
             <div className="flex gap-3 pt-4">
               <Button 
                 type="submit" 
-                className="flex-1 bg-orange-700 text-white transition-colors duration-200 hover:bg-orange-800"
+                className="flex-1 bg-sky-700 text-white transition-colors duration-200 hover:bg-sky-800"
                 disabled={loading}
               >
                 {loading ? (
@@ -147,7 +145,7 @@ const DemoModal = ({ isOpen, onClose, type = 'demo' }) => {
                     Submitting...
                   </>
                 ) : (
-                  type === 'demo' ? 'Request debrief walkthrough' : 'Send CSV demo request'
+                  'Request debrief walkthrough'
                 )}
               </Button>
               <Button 

@@ -17,6 +17,19 @@ button {
 /* Focus states for accessibility */
 button:focus-visible,
 a:focus-visible {
-  outline: 2px solid #c2410c;
+  outline: 2px solid #67e8f9;
   outline-offset: 2px;
+}
+
+@keyframes corvusFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.corvus-float {
+  animation: corvusFloat 6s ease-in-out infinite;
 }

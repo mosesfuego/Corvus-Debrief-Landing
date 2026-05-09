@@ -7,7 +7,7 @@ body {
     font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     font-size: 15px;
     line-height: 1.5;
-    color: #334155;
+    color: #34495f;
     background: #f7fbff;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -15,28 +15,28 @@ body {
 
 h1, h2, h3, h4, h5, h6,
 .heading-font {
-    font-family: 'Space Grotesk', 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     font-weight: 700;
-    line-height: 1.05;
-    letter-spacing: -0.04em;
-    color: #0f172a;
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+    color: #12324a;
 }
 
 h1 {
-    line-height: 1.0;
-    letter-spacing: -0.06em;
+    line-height: 1.04;
+    letter-spacing: -0.035em;
     font-weight: 700;
 }
 
 h2 {
-    line-height: 1.05;
-    letter-spacing: -0.04em;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
     font-weight: 700;
 }
 
 h3 {
-    line-height: 1.1;
-    letter-spacing: -0.03em;
+    line-height: 1.14;
+    letter-spacing: -0.02em;
     font-weight: 700;
 }
 
@@ -86,12 +86,12 @@ code {
 @layer base {
     :root {
         --background: 0 0% 100%;
-        --foreground: 0 0% 3.9%;
+        --foreground: 206 61% 18%;
         --card: 0 0% 100%;
-        --card-foreground: 0 0% 3.9%;
+        --card-foreground: 206 61% 18%;
         --popover: 0 0% 100%;
-        --popover-foreground: 0 0% 3.9%;
-        --primary: 0 0% 9%;
+        --popover-foreground: 206 61% 18%;
+        --primary: 202 82% 39%;
         --primary-foreground: 0 0% 98%;
         --secondary: 0 0% 96.1%;
         --secondary-foreground: 0 0% 9%;
